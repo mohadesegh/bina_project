@@ -48,6 +48,14 @@
 							required
 						/>
 						<button class="primary-btn" type="submit">ثبت و دسته‌بندی</button>
+						<button
+							id="cancelEditBtn"
+							class="ghost-btn subtle"
+							type="button"
+							hidden
+						>
+							انصراف
+						</button>
 					</form>
 
 					<div class="result-box">
@@ -61,6 +69,17 @@
 						<span class="dot amber"></span>
 						<h2>گزارش هفتگی</h2>
 					</div>
+
+					<div class="week-nav" aria-label="پیمایش هفته">
+						<button id="prevWeekBtn" class="nav-btn" type="button">
+							هفته قبل
+						</button>
+						<span id="currentWeekLabel" class="week-label">هفته جاری</span>
+						<button id="nextWeekBtn" class="nav-btn" type="button">
+							هفته بعد
+						</button>
+					</div>
+
 					<div id="weeklyReport" class="report-box"></div>
 				</section>
 			</main>
@@ -78,6 +97,7 @@
 								<th>تاریخ و زمان</th>
 								<th>عدد</th>
 								<th>دسته‌بندی</th>
+								<th>عملیات</th>
 							</tr>
 						</thead>
 						<tbody id="recordsTableBody"></tbody>
