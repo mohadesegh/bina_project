@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
+		<meta name="theme-color" content="#06140d" />
+		<meta
+			name="description"
+			content="ثبت اعداد، دسته‌بندی اتوماتیک و گزارش هفتگی"
+		/>
+		<title>ثبت اعداد و گزارش هفتگی</title>
+		<link rel="manifest" href="manifest.json" />
+		<link rel="icon" href="icon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="styles.css?v=3" />
+	</head>
+	<body>
+		<div class="app-shell">
+			<header class="topbar">
+				<div>
+					<p class="brand-label">CMD MODE</p>
+					<h1>ثبت اعداد و گزارش هفتگی</h1>
+				</div>
+				<button id="clearDataBtn" class="ghost-btn danger" type="button">
+					پاک‌سازی داده‌ها
+				</button>
+			</header>
+
+			<main class="grid">
+				<section class="panel">
+					<div class="panel-head">
+						<span class="dot green"></span>
+						<h2>ثبت مقدار جدید</h2>
+					</div>
+
+					<form id="entryForm">
+						<label for="numberInput">عدد</label>
+						<input
+							id="numberInput"
+							type="number"
+							inputmode="decimal"
+							step="0.1"
+							min="0"
+							max="100"
+							placeholder="مثلا 10"
+							required
+						/>
+						<button class="primary-btn" type="submit">ثبت و دسته‌بندی</button>
+					</form>
+
+					<div class="result-box">
+						<p>دسته‌بندی: <strong id="categoryLabel">-</strong></p>
+						<p>تاریخ و زمان: <strong id="timestampLabel">-</strong></p>
+					</div>
+				</section>
+
+				<section class="panel">
+					<div class="panel-head">
+						<span class="dot amber"></span>
+						<h2>گزارش هفتگی</h2>
+					</div>
+					<div id="weeklyReport" class="report-box"></div>
+				</section>
+			</main>
+
+			<section class="panel records-panel">
+				<div class="panel-head">
+					<span class="dot blue"></span>
+					<h2>سوابق ثبت‌شده</h2>
+				</div>
+
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>تاریخ و زمان</th>
+								<th>عدد</th>
+								<th>دسته‌بندی</th>
+							</tr>
+						</thead>
+						<tbody id="recordsTableBody"></tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+
+		<script src="app.js?v=3"></script>
+	</body>
+</html>
